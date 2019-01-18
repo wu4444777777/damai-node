@@ -6,9 +6,23 @@ var search = require('../models/db')
 router.get('/', function(req, res, next) {
   var type = req.query.type
   console.log("type",type)
+  console.log(req.query.account)
   if(type) {
     search.query(`select * from ${type} limit 5 `,[],function(result) {
-      res.render("search",{catalog: result})
+      if(req.query.account != undefined && req.query.account ){
+        search.query("select * from user where account =?",[req.query.account],function(user){
+          res.render("search",{
+            catalog: result,
+            account: req.query.account,
+            username:user[0].username
+          });
+        })
+      }else{
+        res.render("search",{
+          catalog: result,
+          account:""
+        })
+      }
     })
   }
 });

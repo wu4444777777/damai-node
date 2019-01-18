@@ -178,7 +178,7 @@ html(lang='en')
                 span.city-name 海外
         .nav
           a.nav-left(href='') 首页
-          a.nav-right(href='') 分类
+          a.nav-right(href='/search?type=opera&account='+account) 分类
       .header-search
         img.search-icon(src='images/header/search.png', alt='')
         input.search-input(type='text', placeholder='搜索明星、演出、体育赛事')
@@ -188,7 +188,7 @@ html(lang='en')
           .login_title
             img.login-img(src='images/header/login.png', alt='')
             if(account)
-              span #{account}
+              span #{username}
             else  
               span 登录
           .login-wrap
@@ -196,7 +196,7 @@ html(lang='en')
             .login-list
               a.login-li(href=`${account?"/userInfo?account="+account:"/login"}`) 个人信息
               a.login-li(href='') 账号设置
-              a.login-li(href='/orderManage') 订单管理
+              a.login-li(href='/orderManage?account='+account) 订单管理
         .download
           img.download-img(src='images/header/download.png', alt='')
           span 下载
@@ -241,16 +241,16 @@ html(lang='en')
             span.glyphicon.glyphicon-chevron-right
       // 轮播 end
       .category.w1200
-        a(href='/search?type=concert')
+        a(href='/search?type=concert&account='+account)
           p.category__icon.icon-1
           p 演唱会
-        a(href='/search?type=opera')
+        a(href='/search?type=opera&account='+account)
           p.category__icon.icon-2
           p 话剧歌剧
-        a(href='/search?type=sport')
+        a(href='/search?type=sport&account='+account)
           p.category__icon.icon-3
           p 体育赛事
-        a(href='/search?type=family')
+        a(href='/search?type=family&account='+account)
           p.category__icon.icon-4
           p 儿童亲子
         a(href='#')
@@ -274,7 +274,7 @@ html(lang='en')
     .concert.w1200
       .box-top
         span.header-title 演唱会
-        a(href='/search?type=concert') 查看全部   
+        a(href='/search?type=concert&account='+account) 查看全部   
       .box_content  
         .c-left-img
           a.box-bottom(href=`/detail?name=${concert[0].name}&type=${concert[0].type}&account=${account}`)
@@ -310,7 +310,7 @@ html(lang='en')
     .drama.w1200
       .box-top
         span.header-title 戏剧歌剧
-        a(href='/search?type=opera') 查看全部
+        a(href='/search?type=opera&account='+account) 查看全部
       .box_content   
         .c-left-img
           a.box-bottom(href=`/detail?name=${opera[1].name}&type=${opera[1].type}&account=${account}`)
@@ -347,7 +347,7 @@ html(lang='en')
     .games.w1200
       .box-top
         span.header-title 体育比赛
-        a(href='/search?type=sport') 查看全部
+        a(href='/search?type=sport&account='+account) 查看全部
       .box_content   
         .c-left-img
           a.box-bottom(href=`/detail?name=${match[2].name}&type=${match[2].type}&account=${account}`)
@@ -383,7 +383,7 @@ html(lang='en')
     .children.w1200
       .box-top
         span.header-title 儿童亲子
-        a(href='/search?type=family') 查看全部
+        a(href='/search?type=family&account='+account) 查看全部
       .box_content   
         .c-left-img
           a.box-bottom(href=`/detail?name=${family[3].name}&type=${family[3].type}&account=${account}`)

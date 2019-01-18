@@ -4,7 +4,7 @@ header{
     height: 70px;
 }
 .header{
-  width: 80%;
+  width: 90%;
   height: 70px;
   margin: 0 auto;
   display: flex;
@@ -251,7 +251,7 @@ body{
 .header-right{
   display: flex;
   align-items: center;
-  width: 23%;
+  width: 26%;
   height: 72px;
   justify-content: space-between;
 

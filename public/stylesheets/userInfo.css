@@ -3,6 +3,7 @@ body{
 }
 
 .user-header {
+  display: flex;
   height: 80px;
   padding: 0 10%;
   border-bottom: 5px solid #ed0a75;
@@ -281,7 +282,7 @@ body {
 .header-right {
   display: inline-block;
   vertical-align: 30px;
-  width: 23%;
+  width: 25%;
 }
 
 .login {

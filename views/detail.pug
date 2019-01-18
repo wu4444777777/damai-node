@@ -193,12 +193,12 @@ body
         .login
           img(src="./images/detail-user.png", alt="")
           if(account)
-            span.login-word #{userInfo[0].username}
+            span.login-word #{username}
           else  
             span.login-word
-              a(href="") 登录
+              a(href="/login") 登录
               span |
-              a(href="") 注册
+              a(href="/register") 注册
   .content
     h6.title #{detail[0].name}
     .main
@@ -264,7 +264,7 @@ body
               li
                 a(href="javascript:;",v-bind:class="[tickets,price_1680>0?'hasCount':'noCount']") 1680元（内场）
                 span.ticket-tip(v-if="price_1680==0") 暂时无货，登陆试试运气~
-          button 立即预定
+          a.order(href=`${account?"/orderManage?account="+account:"/login"}`) 立即预定
           .sweep
             .erweima
               img(src="./images/detail-2d.jpg", alt="")

@@ -219,6 +219,9 @@
     width: 66%;
     float: right;
 }
+.intro-title{
+  display: flex;
+}
 .m-flowers {
     display: inline-block;
     position: relative;
@@ -470,15 +473,19 @@
 .ticket ul li:hover .ticket-tip{
     display: block;
 }
-.introduce button{
-    width: 30%;
-    height: 43px;
-    border: none;
-    background: #ed0a75;
-    color: white;
-    font-size: 16px;
-    margin-left: 10%;
-    cursor: pointer;
+.introduce .order{
+  width: 30%;
+  height: 43px;
+  border: none;
+  background: #ed0a75;
+  color: white;
+  font-size: 16px;
+  margin: 20px 35% -25px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  line-height: 43px;
+  text-decoration: none;
 }
 .sweep{
     position: relative;
